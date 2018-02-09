@@ -1,0 +1,9 @@
+// This will be the entry point for the application
+const http = require('http');
+const app = require('../app'); //the app created previously
+
+const port = parseInt(process.env.PORT, 10) || 8000;
+app.set('port', port);
+
+const server = http.createServer(app);
+server.listen(port);

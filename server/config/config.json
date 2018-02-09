@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "dbutler",
+    "password": "password",
+    "database": "pgguide",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "dbutler",
+    "password": "password",
+    "database": "pgguide",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "dbutler",
+    "password": "password",
+    "database": "pgguide",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  }
+}
