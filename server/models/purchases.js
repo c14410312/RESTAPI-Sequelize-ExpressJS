@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
 	user_id: DataTypes.INTEGER
   }, {
 	createdAt:false,
-	updateAt:false
+	updateAt:sequelize.DATE,
   });
 
   purchases.associate = (models) => {
