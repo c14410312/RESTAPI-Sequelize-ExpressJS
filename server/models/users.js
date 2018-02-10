@@ -12,9 +12,10 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   users.associate = (models) => {
-	  users.belongsTo(models.purchases, {
+	  users.hasMany(models.purchases, {
 	  	foreignKey: 'user_id',
-		as: 'user_key',
+		onDelete: 'CASCADE',
 	  });
+  }
   return users;
 };

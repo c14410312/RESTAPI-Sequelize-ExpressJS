@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     tags: DataTypes.STRING
   }, {
 	  createdAt:false,
-	  updatedAt:false
+	  updatedAt:false,
   });
   
   products.associate = (models) => {

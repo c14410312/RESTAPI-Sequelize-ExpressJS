@@ -13,12 +13,12 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   purchases.associate = (models) => {
-	purchase.belongsTo(models.purchase_items, {
+	purchases.belongsTo(models.purchase_items, {
 		foreignKey: 'purchase_id',
 		onDelete: 'CASCADE'
 	});
 
-	purchase.hasMany(models.users, {
+	purchases.hasMany(models.users, {
 		foreignKey: 'user_id',
 		as: 'user_key',
 	});
