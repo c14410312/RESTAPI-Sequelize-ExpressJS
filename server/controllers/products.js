@@ -38,4 +38,41 @@ module.exports = {
 		})
 		.catch(err => res.status(400).send(err));
 	},
+
+	//update item by id
+	update(req, res){
+		return products
+		.findById(req.params.id)
+		.then(products => {
+			if(!products){
+				return res.status(404).send({message: 'product not found'});
+			}
+
+			return products
+				.update({
+					title: req.query.title || products.title,
+				})
+				.then(() => res.status(200).send(products))
+				.catch((err) => res.status(400).send(error));
+		})
+		.catch((err) => res.status(400).send(err));
+	},
+
+	//delete a product from the product table
+	destroy(req, res) {
+		  return products
+		    .findById(req.params.id)
+		    .then(prod => {
+			          if (!prod) {
+					          return res.status(400).send({
+							            message: 'product Not Found',
+							          });
+					        }
+			          return prod
+			            .destroy()
+			            .then(() => res.status(204).send())
+			            .catch(error => res.status(400).send(error));
+			        })
+		    .catch(error => res.status(400).send(error));
+	},
 };
