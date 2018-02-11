@@ -13,10 +13,12 @@ module.exports = (app) => {
 	app.post('/api/users', usersController.create);
 	app.get('/api/users', usersController.list);
 
-	//products gets/posts
+	//products gets/posts/put
 	app.get('/api/products', productsController.list);
-	app.get('/api/products:id', productsController.listId);
+	app.get('/api/products/:id', productsController.listId);
 	app.post('/api/products', productsController.create);
+	app.put('/api/products/:id', productsController.update);
+	app.delete('/api/products/:id', productsController.destroy);
 
 	//purchases gets/posts
 	app.post('/api/purchases', purchasesController.create);
